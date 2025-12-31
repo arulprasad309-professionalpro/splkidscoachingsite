@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering Parents of Children on the Autism Spectrum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .tagline {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.05em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9ff;
+        }
+
+        .about-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 5px solid #667eea;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* What We Offer */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #667eea20;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Features List */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #555;
+        }
+
+        .feature-item::before {
+            content: '✔';
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        /* Sessions Section */
+        .sessions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .sessions h2 {
+            color: white;
+        }
+
+        .sessions-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .session-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .session-box strong {
+            display: block;
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+
+        .session-box p {
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+
+        /* Group vs Private */
+        .coaching-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .coaching-type {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+        }
+
+        .coaching-type h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .coaching-type p {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Promise Section */
+        .promise {
+            background: #fff3e0;
+        }
+
+        .promise-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #ffc107;
+        }
+
+        .promise-box p {
+            font-size: 1.15em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-section .cta-button {
+            background: white;
+            color: #667eea;
+            font-size: 1.2em;
+            padding: 16px 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sessions-info {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .coaching-types {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .about-content {
+                padding: 25px;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌈 Empowering Parents of Children on the Autism Spectrum</h1>
+            <p class="tagline">Gentle Guidance. Real-Life Experience. Heart-Led Support.</p>
+            <p>Raising a child on the autism spectrum comes with unique joys — and unique challenges. We're here to walk beside you with empathy, understanding, and practical guidance that truly supports your journey as a parent or caregiver.</p>
+            <a href="#signup" class="cta-button">Join Our Community</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Meet Your Guide</h2>
+            <div class="about-content">
+                <p>This coaching program is led by a trained professional with over 25 years of lived experience supporting and raising an autistic child, bringing deep emotional understanding, patience, and real-world strategies that work within everyday family life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>💖 What We Offer</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Group Coaching Classes</h3>
+                    <p>Thoughtfully created sessions to support parents of autistic children and neurodivergent learners who want to understand, connect, and empower their child in a loving, structured way.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Private Guidance Sessions</h3>
+                    <p>One-to-one appointments tailored just for you. Explore your child's unique journey more deeply with dedicated attention and care focused on your personal situation.</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">Supportive, judgment-free space</div>
+                <div class="feature-item">Focus on emotional strength & confidence</div>
+                <div class="feature-item">Real-life strategies you can use at home</div>
+                <div class="feature-item">Motivational guidance to help you stay inspired</div>
+                <div class="feature-item">Individual situations discussed with care</div>
+                <div class="feature-item">Practical, real-life applications</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessions Section -->
+    <section class="sessions">
+        <div class="container">
+            <h2>📅 Weekly Sessions — Simple & Convenient</h2>
+            <p style="text-align: center; font-size: 1.05em; opacity: 0.95;">We conduct two group coaching classes every week</p>
+
+            <div class="sessions-info">
+                <div class="session-box">
+                    <span>🗓</span>
+                    <strong>Saturday & Sunday</strong>
+                    <p>Weekend convenience for your family</p>
+                </div>
+                <div class="session-box">
+                    <span>⏱</span>
+                    <strong>45 Minutes</strong>
+                    <p>Focused, impactful sessions</p>
+                </div>
+                <div class="session-box">
+                    <span>💲</span>
+                    <strong>₹200 per session</strong>
+                    <p>Moderate & affordable pricing</p>
+                </div>
+            </div>
+
+            <div class="coaching-types">
+                <div class="coaching-type">
+                    <h3>Who Can Join?</h3>
+                    <p>👨‍👩‍👧 Both parents</p>
+                    <p>🤝 Caregivers & guardians</p>
+                    <p>💬 Anyone actively supporting the child</p>
+                </div>
+                <div class="coaching-type">
+                    <h3>Each Class Includes</h3>
+                    <p>✨ Discussion of activities you can do with your child</p>
+                    <p>✨ Guided modules explained in simple steps</p>
+                    <p>✨ Emotional & motivational support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Questions Section -->
+    <section class="services">
+        <div class="container">
+            <h2>📝 Ask Your Questions Anytime</h2>
+            <div class="about-content">
+                <p>Once you sign up, you'll receive a dedicated Google Form where you can share doubts, concerns, or topics you'd like covered — so every session truly supports your needs. Your voice matters, and we want to ensure every parent feels heard and supported.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="promise">
+        <div class="container">
+            <h2>❤️ Our Promise to You</h2>
+            <div class="promise-box">
+                <p>We believe every child is gifted in their own way — and every parent deserves support, strength, and clarity.</p>
+                <p>Our mission is to empower you with confidence, compassion, and hope, so you never feel alone on this journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" id="signup">
+        <div class="container">
+            <h2>🚀 Ready to Begin?</h2>
+            <p>Join our weekend coaching sessions and start building a calmer, stronger, more connected parenting experience — one step at a time.</p>
+            <a href="mailto:contact@example.com" class="cta-button">Sign Up Today</a>
+            <p style="margin-top: 30px; font-size: 0.95em; opacity: 0.8;">Your journey toward empowered parenting begins here. 🌷</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Autism Spectrum Parenting Coaching. All rights reserved.</p>
+        <p>Empowering families, one session at a time.</p>
+    </footer>
+</body>
+</html>
